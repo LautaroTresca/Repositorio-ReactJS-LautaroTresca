@@ -17,8 +17,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <ItemListContainer greeting={"Bienvenidos a mi tienda"} />
-      <Counter stock={5} onAdd={handleOnAdd}/>
+      <ItemListContainer greeting={"Bienvenidos a mi tienda"}/>
+      <Counter stock={5} onAdd={handleOnAdd} titulo={"Remera basica"}/>
     </div>
   );
 }

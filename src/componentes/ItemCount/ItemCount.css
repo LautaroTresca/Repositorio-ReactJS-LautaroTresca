@@ -34,4 +34,11 @@
     text-align: center;
 }
 
-
+.card{
+  width: fit-content;
+  background: rgb(141 141 141 / 20%);
+  box-shadow: 0 8px 32px 0 rgb(87 87 88 / 41%);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+}
