@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import "./ItemCount.css"
+import img from "./assets/remera.jpg"
 
 //llamo al hook useState y le paso por parametros el stock y la funcion onAdd
 
@@ -32,10 +33,16 @@ const Counter = ({titulo, stock, onAdd}) =>{
     return(
         <div className='card'>
             <h4>{titulo}</h4>
-            <button className='css-button-neumorphic' onClick={restar}>-</button>
-            <input className='input' value={value} onChange={(e) => setValue(e.target.value)}/>
-            <button className='css-button-neumorphic' onClick={sumar}>+</button>
-            <button className='css-button-neumorphic' onClick={onAdd}>Agregar al carrito</button>
+            <p className='stock'>Stock: {stock} unidades</p>
+            <div>
+                <img className='img' src={img} alt="fotoDeRemera"/>
+            </div>
+            <div>
+                <button className='css-button-neumorphic' onClick={restar}>-</button>
+                <input className='input' value={value} onChange={(e) => setValue(e.target.value)}/>
+                <button className='css-button-neumorphic' onClick={sumar}>+</button>
+                <button className='css-button-neumorphic' onClick={onAdd}>Agregar al carrito</button>
+            </div>
         </div>
     )  
 }

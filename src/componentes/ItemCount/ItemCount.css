@@ -35,10 +35,24 @@
 }
 
 .card{
-  width: fit-content;
-  background: rgb(141 141 141 / 20%);
-  box-shadow: 0 8px 32px 0 rgb(87 87 88 / 41%);
+  margin: 0px auto 20px auto;
+  width: 200px;
+  background: rgb(26 55 72 / 14%);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 41%);
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
+  border: solid 1px #00000014;
+}
+
+.img{
+  width: 100%;
+  object-fit: fill;
+}
+
+.stock{
+  font-weight: bold;
+  font-size: small;
+  font-style: italic;
+  color: #585858;
 }
