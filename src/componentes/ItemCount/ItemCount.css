@@ -1,20 +1,20 @@
 .css-button-neumorphic {
-    margin: 10px;
-    width: fit-content;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background: #efefef;
-    box-shadow: 2px 2px 4px #c8d0e7, -1px -1px 3px #fff;
-    color: #585858;
+  margin: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #ffffff;
+  color: #585858;
   }
   .css-button-neumorphic:active {
     box-shadow: inset 1px 1px 3px #c8d0e7, inset -1px -1px 3px #fff;
@@ -22,7 +22,7 @@
 
 
 .input{
-    background: rgb(237 237 237 / 39%);
+    background: rgb(255, 255, 255);
     box-shadow: 0 8px 32px 0 rgb(0 0 0 / 20%);
     -webkit-backdrop-filter: blur( 4px );
     backdrop-filter: blur( 4px );
@@ -37,12 +37,11 @@
 .card{
   margin: 0px auto 20px auto;
   width: 200px;
-  background: rgb(26 55 72 / 14%);
-  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 41%);
+  background: rgb(0 0 0 / 12%);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 60%);
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
-  border: solid 1px #00000014;
 }
 
 .img{

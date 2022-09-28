@@ -1,10 +1,11 @@
 import "./Navbar.css"
 import Carwidget from "../CarWidget/Carwidget"
+import logo from "./assets/logo.png"
 
 const navbar = () => {
     return(
         <nav className="navbar">
-            <h1 className="tituloNav">Mi pagina e-commerce</h1>
+            <img className="logo" src={logo}/>
                 <div className="divBotones">
                     <button className="css-button-arrow--black">Remeras</button>
                     <button className="css-button-arrow--black">Pantalones</button>

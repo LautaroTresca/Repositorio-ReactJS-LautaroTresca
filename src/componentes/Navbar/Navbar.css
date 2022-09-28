@@ -1,10 +1,12 @@
 .navbar{
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    background: rgba( 0, 0, 0, 0.6 );
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur( 5.5px );
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  background: #747474;
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+  -webkit-backdrop-filter: blur( 5.5px );
+  backdrop-filter: blur( 6.5px );
+  align-items: center;
 }
 
 .tituloNav:hover{
@@ -13,21 +15,21 @@
 }
 
 .css-button-arrow--black {
-    margin: 20px;
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    overflow: hidden;
-    border-radius: 5px;
-    border: none;
-    background-color: #343a40
+  margin: 20px;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #323232;
   }
   .css-button-arrow--black:hover {
     border-radius: 5px;
@@ -52,4 +54,18 @@
   .divBotones{
     display: flex;
     align-items: center;
-  }
+}
+
+
+.logo{
+  width: 120px;
+  height: 100%;
+  border-radius: 80%;
+  border: solid 1px #00000066;
+  opacity: 100%;
+}
+
+.logo:hover{
+  opacity: 70%;
+  transition: .7s;
+}
