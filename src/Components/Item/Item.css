@@ -1,0 +1,33 @@
+.divCards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: rgb(131 131 131 / 5%);
+    backdrop-filter: blur( 4px );
+    border: solid 1px #0000002b;
+    border-radius: 4px;
+    margin: 20px;
+  }
+
+.card:hover{
+    transition: .5s;
+    transform: translateY(-1%);
+    box-shadow: 5px 5px 20px #00000067;
+}
+  
+.img{
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+}
+  
+.stock{
+    font-weight: bold;
+    font-size: small;
+    font-style: italic;
+    color: #585858;
+}

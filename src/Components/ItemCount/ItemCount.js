@@ -1,10 +1,9 @@
 import {useState} from 'react'
 import "./ItemCount.css"
-import img from "./assets/remera.jpg"
 
 //llamo al hook useState y le paso por parametros el stock y la funcion onAdd
 
-const Counter = ({titulo, stock, onAdd}) =>{ 
+const Counter = ({stock, onAdd}) =>{ 
     const[value, setValue] = useState(1)
 
 //creo las funciones para los botones
@@ -31,18 +30,11 @@ const Counter = ({titulo, stock, onAdd}) =>{
 //creo los elementos para que React los renderize luego en el virtualDOM
 
     return(
-        <div className='card'>
-            <h4>{titulo}</h4>
-            <p className='stock'>Stock: {stock} unidades</p>
-            <div>
-                <img className='img' src={img} alt="fotoDeRemera"/>
-            </div>
-            <div>
-                <button className='css-button-neumorphic' onClick={restar}>-</button>
-                <input className='input' value={value} onChange={(e) => setValue(e.target.value)}/>
-                <button className='css-button-neumorphic' onClick={sumar}>+</button>
-                <button className='css-button-neumorphic' onClick={onAdd}>Agregar al carrito</button>
-            </div>
+        <div>
+            <button className='css-button-neumorphic' onClick={restar}>-</button>
+            <input className='input' value={value} onChange={(e) => setValue(e.target.value)}/>
+            <button className='css-button-neumorphic' onClick={sumar}>+</button>
+            <button className='css-button-neumorphic' onClick={onAdd}>Agregar al carrito</button>
         </div>
     )  
 }
