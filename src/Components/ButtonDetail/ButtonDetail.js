@@ -1,5 +1,3 @@
-import "./ButtonDetail.css"
-
 const ButtonDetail = () =>{
     return(
         <div>

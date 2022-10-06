@@ -1,6 +1,6 @@
 const productos = [
     {
-        id: "1",
+        id: 1,
         name: "Remera Ranglan",
         price: "2700",
         category: "remeras",
@@ -9,7 +9,7 @@ const productos = [
         description:"100% algodon, calidad premium."
     },
     {
-        id: "2",
+        id: 2,
         name: "Pantalon deportivo",
         price: "4000",
         category: "pantalones",
@@ -18,7 +18,7 @@ const productos = [
         description: "Algodon y poliester, calidad premium."
     },
     {
-        id: "3",
+        id: 3,
         name: "Remera basica",
         price: "2500",
         category: "remeras",
@@ -29,9 +29,17 @@ const productos = [
 ]
 
 export const getProducts = () => {
-    return new Promise((resolve) =>{
-        setTimeout(() =>{
+    return new Promise((resolve) => {
+        setTimeout(() => {
             resolve(productos)
         }, 2000)
     })
+}
+
+export const getProductById = (id) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(productos.find(prod => prod.id === id))
+        }, 2000)
+    })  
 }

@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import "./ItemCount.css"
+import "./Counter.css"
 
 //llamo al hook useState y le paso por parametros el stock y la funcion onAdd
 

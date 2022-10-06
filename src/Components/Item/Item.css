@@ -1,16 +1,10 @@
-.divCards{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .card{
     background: rgb(131 131 131 / 5%);
     backdrop-filter: blur( 4px );
     border: solid 1px #0000002b;
     border-radius: 4px;
     margin: 20px;
+    width: 250px;
   }
 
 .card:hover{
