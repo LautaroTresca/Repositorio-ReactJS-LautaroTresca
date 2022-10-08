@@ -1,5 +1,5 @@
 .card{
-    background: rgb(131 131 131 / 5%);
+    background: #8383830d;
     backdrop-filter: blur( 4px );
     border: solid 1px #0000002b;
     border-radius: 4px;
@@ -24,4 +24,9 @@
     font-size: small;
     font-style: italic;
     color: #585858;
+}
+
+.price{
+    font-size: 12px;
+    font-weight: bolder;
 }

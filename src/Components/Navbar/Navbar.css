@@ -1,12 +1,13 @@
 .navbar{
   display: flex;
   justify-content: space-around;
-  color: white;
-  background: #747474;
-  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.096);
   -webkit-backdrop-filter: blur( 5.5px );
   backdrop-filter: blur( 6.5px );
   align-items: center;
+  border-bottom: solid 1px #0000006c;
+  padding: 10px;
+  background-color: rgba(214, 214, 214, 0.507);
 }
 
 .tituloNav:hover{
@@ -18,7 +19,7 @@
   margin: 20px;
   min-width: 130px;
   height: 40px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
@@ -28,13 +29,13 @@
   outline: none;
   overflow: hidden;
   border-radius: 5px;
-  border: none;
-  background-color: #323232;
+  border: double 1px rgba(0, 0, 0, 0.185);
   }
   .css-button-arrow--black:hover {
     border-radius: 5px;
     padding-right: 24px;
     padding-left:8px;
+    background-color: rgb(224, 42, 42);
   }
   .css-button-arrow--black:hover:after {
     opacity: 1;

@@ -1,11 +1,8 @@
-import ButtonDetail from "../ButtonDetail/ButtonDetail"
 import "./Item.css"
+import { Link } from "react-router-dom"
 
 
-
-
-const Item = ({id, name, stock, img}) =>{
-    
+const Item = ({id, name, stock, img, price}) =>{
     return(
         <div>
             <div key={id} className='card'>
@@ -14,13 +11,12 @@ const Item = ({id, name, stock, img}) =>{
                 <div>
                     <img className='img' src={img} alt="fotoDeProducto"/>
                 </div>
-                {/* <Counter stock={stock} onAdd={handleOnAdd}/> */}
-                <ButtonDetail/>
+                <p className="price">${price}</p>
+                <Link to={`/detail/${id}`}><button className="css-button-neumorphic">Ver detalle del producto</button></Link>
             </div> 
         </div>
         )
 }
-
-    
+  
 
 export default Item    

@@ -1,6 +1,21 @@
 .divItemDetail{
     margin: 20px;
-    background-color: #6e6e6e17;
+    background-color: #6e6e6e25;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
+}
+
+.textDescription{
+    margin: 5px;
+    text-align: left;
+    color: #545454;
+}
+
+.imgDetail{
+    width: 450px;
+}
+
+.textCant{
+    color: #6e6e6e77;
 }

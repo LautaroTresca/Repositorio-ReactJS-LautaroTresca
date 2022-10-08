@@ -15,12 +15,16 @@ const ItemDetail = ({product}) => {
         <div className="divItemDetail">
             <div>
                 <h1>{product.name}</h1>
-                <img src={product.img}/>
+                <img className="imgDetail" src={product.img} alt={product.name}/>
             </div>
             <div>
-                <h2>{product.price}</h2>
-                <p>{product.description}</p>
+                <h2>${product.price}</h2>
+                <li className="textDescription">{product.description1}</li>
+                <li className="textDescription">{product.description2}</li>
+                <li className="textDescription">{product.description3}</li>
+                <li className="textDescription">{product.description4}</li>
                 <Counter stock={product.stock} onAdd={handleOnAdd}/>
+                <p className="textCant">Stock disponible: {product.stock}</p>
             </div>
         </div>
     )
