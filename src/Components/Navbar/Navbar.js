@@ -14,7 +14,7 @@ const navbar = () => {
                     <Link to={"/category/zapatillas"}><button className="css-button-arrow--black">Zapatillas</button></Link>          
                 </div>
                 <button className="css-button-arrow--black">
-                    <Carwidget/>
+                    <Link to={"/cart"}><Carwidget/></Link>
                 </button>  
         </nav>
     )

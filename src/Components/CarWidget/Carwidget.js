@@ -5,7 +5,6 @@ const Carwidget = () =>{
     return(
         <div className="divCarrito">
             <img src={carro} alt="iconoDeCarrito"/>
-            3
         </div>  
     )
 }
