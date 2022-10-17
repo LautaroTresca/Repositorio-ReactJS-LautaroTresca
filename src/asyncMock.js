@@ -1,7 +1,7 @@
 const productos = [
     {
         id: "1",
-        name: "Remera Ranglan",
+        name: "REMERA RANGLAN",
         price: "2.799",
         category: "remeras",
         img:"https://d2r9epyceweg5n.cloudfront.net/stores/399/451/products/20200730_2146151-eb307a7a8aa844bd4815961666075488-1024-1024.jpg",

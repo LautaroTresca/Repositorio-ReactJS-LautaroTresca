@@ -5,7 +5,7 @@ import ItemList from "../ItemList/ItemList"
 import Spinner from "../Spinner/Spinner"
 import { useParams } from "react-router-dom"
 
-const ItemListContainer = ({greeting}) =>{ 
+const ItemListContainer = () =>{ 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -32,7 +32,6 @@ const ItemListContainer = ({greeting}) =>{
 
     return(
         <div>
-            <h1>{greeting}</h1>
             <ItemList products={products}/>
         </div>
     )

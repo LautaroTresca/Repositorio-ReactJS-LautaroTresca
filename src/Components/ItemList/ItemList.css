@@ -1,6 +1,8 @@
 .divCards{
+    padding-top: 160px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    align-content: flex-end;
 }

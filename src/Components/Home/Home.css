@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap');
+
+
+.sectionHeader{
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    height: 700px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgSectionHeader{
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+
+.sectionHeader::before{
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+
+.h1ImgSectionHeader{
+    font-family: 'Roboto Slab', serif;
+    font-size: xx-large;
+    position: absolute;
+    color: wheat;
+}
+
+.sectionMain{
+    margin: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(238, 238, 238);
+}
+
+.titleSectionMain{
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.377);
+}
+
+.containerCardsSectionMain{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 60px;
+    row-gap: 60px;
+    justify-content: space-evenly;
+}
+
+.cardSectionMain{
+    float: left;
+    width: 250px;
+    background-color: #dfdfdf;
+}
+
+.cardSectionMain:hover{
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.11);
+}
+
+.imgCardSectionMain{
+    width: 100%;
+    object-fit: cover;
+}

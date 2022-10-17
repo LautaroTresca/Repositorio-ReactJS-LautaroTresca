@@ -1,15 +1,21 @@
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../../CartContext/CartContext"
 
-const ItemDetail = ({name, img, price, description1, description2, description3, description4, stock}) => {
-   
-    const [productoAgregado, setProductoAgregado] = useState([])
+const ItemDetail = ({id, name, img, price, description1, description2, description3, description4, stock}) => {
+
+    const {addItem} = useContext(CartContext)
 
     const handleOnAdd = (cantidad) => {
-        setProductoAgregado({cantidad, name, price, img})
-     }
+        const productoAgregado = {
+            id, name, price, cantidad
+        }
+        
+
+        addItem({...productoAgregado})
+    }
+
 
     return(
         <div className="divItemDetail">
@@ -23,16 +29,16 @@ const ItemDetail = ({name, img, price, description1, description2, description3,
                 <li className="textDescription">{description2}</li>
                 <li className="textDescription">{description3}</li>
                 <li className="textDescription">{description4}</li>
-                { productoAgregado.length === 0 ?
-                    <ItemCount stock={stock} onAdd={handleOnAdd}/>   
+                <ItemCount stock={stock} onAdd={handleOnAdd}/>   
+                {/* { cart === 0 ?
                         :
                             <footer>
-                                <p>Se agregó {productoAgregado.cantidad} {productoAgregado.name} al carrito</p>
+                                <p>Se agregó {cart} al carrito</p>
                                 <Link to={"/cart"}><button className="css-button-neumorphic">Finalizar compra</button></Link>
                                 <Link to={"/"}><button className="css-button-neumorphic">Seguir Comprando</button></Link>
                             </footer>    
-                }    
-                <p className="textCant">Stock disponible: {productoAgregado.cantidad > 0 ? `${stock}` - `${productoAgregado.cantidad}` : `${stock}` }</p>
+                }     */}
+                <p className="textCant">Stock disponible: {stock} </p>
             </div>
         </div>
     )

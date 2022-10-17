@@ -1,13 +1,16 @@
 .navbar{
-  display: flex;
-  justify-content: space-around;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.096);
-  -webkit-backdrop-filter: blur( 5.5px );
-  backdrop-filter: blur( 6.5px );
-  align-items: center;
-  border-bottom: solid 1px #0000006c;
+  position: absolute;
   padding: 10px;
-  background-color: rgba(214, 214, 214, 0.507);
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 54%);
+  -webkit-backdrop-filter: blur( 6.5px );
+  backdrop-filter: blur( 6.5px );
+  background-color: rgb(0 0 0 / 56%);
 }
 
 .tituloNav:hover{
@@ -15,42 +18,42 @@
   transition: .3s;
 }
 
-.css-button-arrow--black {
+.css-button-sliding-to-bottom--black {
   margin: 20px;
   min-width: 130px;
   height: 40px;
-  color: rgb(0, 0, 0);
-  padding: 5px 10px;
+  color: #fff;
+  padding: 0px 10px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
   outline: none;
+  border-radius: 10px;
+  z-index: 0;
+  background: #fff;
   overflow: hidden;
-  border-radius: 5px;
-  border: double 1px rgba(0, 0, 0, 0.185);
-  }
-  .css-button-arrow--black:hover {
-    border-radius: 5px;
-    padding-right: 24px;
-    padding-left:8px;
-    background-color: rgb(224, 42, 42);
-  }
-  .css-button-arrow--black:hover:after {
-    opacity: 1;
-    right: 10px;
-  }
-  .css-button-arrow--black:after {
-    content: "\00BB";
-    position: absolute;
-    opacity: 0;
-    font-size: 20px;
-    line-height: 40px;
-    top: 0;
-    right: -20px;
-    transition: 0.4s;
-  }
+  border: 2px solid #212529;
+  color: #212529;
+}
+.css-button-sliding-to-bottom--black:hover {
+  color: #fff;
+}
+.css-button-sliding-to-bottom--black:hover:after {
+  height: 100%;
+}
+.css-button-sliding-to-bottom--black:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: #212529;
+}
 
   .divBotones{
     display: flex;
