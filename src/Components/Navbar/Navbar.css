@@ -1,16 +1,15 @@
 .navbar{
   position: absolute;
-  padding: 10px;
   z-index: 1;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 54%);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 6%);
   -webkit-backdrop-filter: blur( 6.5px );
   backdrop-filter: blur( 6.5px );
-  background-color: rgb(0 0 0 / 56%);
+  background-color: #f3f3f317;
 }
 
 .tituloNav:hover{
@@ -19,23 +18,21 @@
 }
 
 .css-button-sliding-to-bottom--black {
-  margin: 20px;
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 0px 10px;
-  font-weight: bold;
+  height: 45px;
+  min-width: 150px;
+  padding: 0px 30px;
+  font-size: medium;
+  font-family: sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
   outline: none;
-  border-radius: 10px;
   z-index: 0;
-  background: #fff;
+  background: #00000000;
   overflow: hidden;
-  border: 2px solid #212529;
-  color: #212529;
+  border: none;
+  color: #707070;
 }
 .css-button-sliding-to-bottom--black:hover {
   color: #fff;
@@ -55,9 +52,9 @@
   background: #212529;
 }
 
-  .divBotones{
-    display: flex;
-    align-items: center;
+.divBotones{
+  display: flex;
+  align-items: center;
 }
 
 
@@ -65,11 +62,16 @@
   width: 120px;
   height: 100%;
   border-radius: 80%;
-  border: solid 1px #00000066;
-  opacity: 100%;
+  
 }
 
 .logo:hover{
-  opacity: 70%;
+  opacity: 80%;
   transition: .7s;
+}
+
+.carrito{
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
 }

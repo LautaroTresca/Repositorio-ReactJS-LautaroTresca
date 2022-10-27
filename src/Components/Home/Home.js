@@ -1,16 +1,25 @@
 import "./Home.css"
-import { getProducts } from "../../asyncMock"
+import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Spinner from "../Spinner/Spinner"
+import { getDocs, collection, query, doc} from "firebase/firestore"
+import { baseDeDatos } from "../services/firebase"
 
 const Home = () => {
-
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getProducts().then (Response => {
-            setProducts(Response)
+        const collectionBaseDeDatos = query(collection(baseDeDatos, "productos"))
+
+        getDocs(collectionBaseDeDatos).then (response => {
+            const productosMapeados = response.docs.map(doc => {
+                const data = doc.data()
+                return{id: doc.id, ...data}
+            })
+            
+            setProducts(productosMapeados)
+            
         }).finally(() => {
             setLoading(false)
         })
@@ -33,13 +42,17 @@ const Home = () => {
             <main>
                 <section className="sectionMain">
                     <span>
-                        <h1 className="titleSectionMain">Articulos destacados</h1>
+                        <h1 className="titleSectionMain">Todos los productos</h1>
                             <span className="containerCardsSectionMain">
                                 {products.map(prod => 
-                                    <div className="cardSectionMain" key={prod.id}>
-                                        <img className="imgCardSectionMain" alt="imagen-producto" src={prod.img}/>
-                                        <h5>{prod.name}</h5>
-                                    </div>)}
+                                    <Link key={prod.id} className="linkCards" to={`/detail/${prod.id}`}>
+                                        <div className="cardSectionMain" >
+                                            <img className="imgCardSectionMain" alt="imagen-producto" src={prod.img}/>
+                                            <h5>{prod.name}</h5>
+                                            
+                                        </div>
+                                    </Link> 
+                                )}  
                             </span>
                     </span>
                 </section>

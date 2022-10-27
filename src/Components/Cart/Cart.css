@@ -1,5 +1,4 @@
 .tablaProductos{
-    height: 100%;
     width: 100%;
     position: absolute;
     margin-top: 180px;
@@ -8,7 +7,7 @@
 
 .fila{
     padding: 20px 0px 20px 0px;
-    border: solid 1px #0000000d;
+    border: solid 1px #00000030;
 }
 
 .carritoVacio{
@@ -22,3 +21,39 @@
     font-size: xx-large;
     font-weight: 500;
 }
+
+.css-button-arrow--black {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: #343a40
+  }
+  .css-button-arrow--black:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .css-button-arrow--black:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  .css-button-arrow--black:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }

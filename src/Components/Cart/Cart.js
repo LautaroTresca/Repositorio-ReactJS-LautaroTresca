@@ -2,15 +2,19 @@ import "./Cart.css"
 import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import tachoDeBasura from "./assets/eliminar.png"
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const {cart, removeItem} = useContext(CartContext)
+    const {cart, removeItem, total} = useContext(CartContext)
     
     if(cart.length === 0){
         return(
             <div className="carritoVacio">
                 <p>El carrito está vacio</p>
+                <Link to="/">
+                    <button className="css-button-arrow--black">Ir a los productos</button>
+                </Link>
             </div>
         )
     }else{
@@ -35,6 +39,7 @@ const Cart = () => {
             </table>
         )
     }
+
 }
 
 export default Cart

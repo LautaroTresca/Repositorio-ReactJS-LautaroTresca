@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
-import { getProductById } from "../../asyncMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Spinner from "../Spinner/Spinner"
 import { useParams } from "react-router-dom"
+import { getDoc, doc } from "firebase/firestore"
+import { baseDeDatos } from "../services/firebase"
 
 const ItemDetailContainer = () =>{ 
     const [product, setProduct] = useState({})
@@ -11,8 +12,11 @@ const ItemDetailContainer = () =>{
     const {productId} = useParams()
 
     useEffect(() => { 
-        getProductById(productId).then (response => {
-            setProduct(response)
+
+        const documentoDeLaBaseDeDatos = doc(baseDeDatos, "productos", productId)
+
+        getDoc(documentoDeLaBaseDeDatos).then (response => {
+            setProduct(response.data())
         }).finally(() =>{
             setLoading(false)
         })
