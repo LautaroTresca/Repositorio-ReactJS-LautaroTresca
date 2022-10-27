@@ -2,7 +2,7 @@ import "./Home.css"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Spinner from "../Spinner/Spinner"
-import { getDocs, collection, query, doc} from "firebase/firestore"
+import { getDocs, collection, query} from "firebase/firestore"
 import { baseDeDatos } from "../services/firebase"
 
 const Home = () => {

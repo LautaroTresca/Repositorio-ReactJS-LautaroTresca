@@ -1,4 +1,3 @@
-// Archivo con toda la logica del carrito
 import { createContext, useEffect, useState } from "react"
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
@@ -24,17 +23,25 @@ export const CartProvider = ({children}) => {
             setCart([...cart, productoAgregado])
             
             Toastify({
-                text: "Se agrego el producto al carrito"  ,
+                text: `Se agrego ${productoAgregado.cantidad} ${productoAgregado.name} al carrito`,
                 className: "info",
                 style: {
                   background: "linear-gradient(to right, #006e07, #009400, #058c00)",
                 }
               }).showToast();
         }else{
-            Swal.fire({
-                title: 'El producto ya esta en el carrito',
-                icon: 'warning',
-              })
+            const cartActualizado = cart.map(prod => {
+                if(prod.id === productoAgregado.id){
+                    const productoActualizado = {
+                        ...prod, 
+                        cantidad: productoAgregado.cantidad
+                    }
+                    return productoActualizado
+                }else{
+                    return prod
+                }
+            })
+            setCart(cartActualizado)
         }
     }
 
@@ -53,6 +60,7 @@ export const CartProvider = ({children}) => {
         cart.forEach(prod => {
             acumulador += prod.cantidad
         })
+
         return acumulador
     }
 
@@ -62,10 +70,20 @@ export const CartProvider = ({children}) => {
         cart.forEach(prod => {
             acumulador += prod.cantidad * prod.price
         })
+        return acumulador
+    }
+
+    const vaciarCarrito = () =>{
+        setCart([])
+    }
+
+    const getCantidadProducto = (id) => {
+        const producto = cart.find(prod => prod.id === id)
+        return producto?.cantidad
     }
 
     return(
-        <CartContext.Provider value={{addItem, cart, isInCart, removeItem, cantidadTotal, total}}>
+        <CartContext.Provider value={{addItem, cart, isInCart, removeItem, cantidadTotal, total, vaciarCarrito, getCantidadProducto}}>
             {children}
         </CartContext.Provider>
     )

@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 8px 32px 0 rgb(0 0 0 / 6%);
   -webkit-backdrop-filter: blur( 6.5px );
@@ -59,10 +59,10 @@
 
 
 .logo{
-  width: 120px;
+  width: 90px;
   height: 100%;
   border-radius: 80%;
-  
+  margin: 10px;
 }
 
 .logo:hover{

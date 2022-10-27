@@ -8,19 +8,15 @@ import { baseDeDatos } from "../services/firebase"
 const ItemDetailContainer = () =>{ 
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
-
-    const {productId} = useParams()
-
+    const { productId } = useParams()
+    
     useEffect(() => { 
-
         const documentoDeLaBaseDeDatos = doc(baseDeDatos, "productos", productId)
-
-        getDoc(documentoDeLaBaseDeDatos).then (response => {
-            setProduct(response.data())
-        }).finally(() =>{
-            setLoading(false)
-        })
-            
+            getDoc(documentoDeLaBaseDeDatos).then (response => {
+                setProduct(response.data())
+            }).finally(() =>{
+                setLoading(false)
+            })
     }, [productId])
 
     if(loading){

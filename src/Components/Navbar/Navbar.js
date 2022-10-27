@@ -29,10 +29,6 @@ const Navbar = () => {
                             <Link key={categoria.id} to={`/category/${categoria.slug}`}><button className="css-button-sliding-to-bottom--black">{categoria.label}</button></Link>
                         ))
                     }
-                    {/* <Link to={"/"}><button className="css-button-sliding-to-bottom--black">Inicio</button></Link>
-                    <Link to={"/category/remeras"}><button className="css-button-sliding-to-bottom--black">Remeras</button></Link>
-                    <Link to={"/category/pantalones"}><button className="css-button-sliding-to-bottom--black">Pantalones</button></Link>
-                    <Link to={"/category/zapatillas"}><button className="css-button-sliding-to-bottom--black">Zapatillas</button></Link>           */}
                 </section>
                 <button className="css-button-sliding-to-bottom--black">
                     <Link className="carrito" to={"/cart"}><Carwidget/></Link>

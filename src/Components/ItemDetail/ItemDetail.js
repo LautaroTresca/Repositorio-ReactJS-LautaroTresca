@@ -2,20 +2,21 @@ import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { useContext } from "react"
 import { CartContext } from "../../CartContext/CartContext"
+import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
-const ItemDetail = ({id, name, img, price, description1, description2, description3, description4, stock}) => {
-
-    const {cart, addItem, isInCart} = useContext(CartContext)
+const ItemDetail = ({name, img, price, description1, description2, description3, description4, stock}) => {
+    const { addItem, isInCart, getCantidadProducto } = useContext(CartContext)
+    const { productId } = useParams()
 
     const handleOnAdd = (cantidad) => {
         const productoAgregado = {
-            id, name, price, cantidad
+            id: productId, name, price, cantidad
         }
-        
-        addItem({...productoAgregado, cantidad})
+        addItem({...productoAgregado})
     }
 
+    const cantidadAgregada = getCantidadProducto(productId)
 
     return(
         <div className="divItemDetail">
@@ -31,14 +32,15 @@ const ItemDetail = ({id, name, img, price, description1, description2, descripti
                 <li className="textDescription">{description3}</li>
                 <li className="textDescription">{description4}</li>
 
-                { !isInCart(id) ? 
-                 <ItemCount stock={stock} onAdd={handleOnAdd}/>
+                { !isInCart(productId)
+                    ? 
+                    <ItemCount stock={stock} onAdd={handleOnAdd} initial={cantidadAgregada}/>
                     :
-                        <footer>
-                            <p>Se agregó {name} al carrito</p>
-                            <Link to={"/cart"}><button className="css-button-neumorphic">Finalizar compra</button></Link>
-                            <Link to={"/"}><button className="css-button-neumorphic">Seguir Comprando</button></Link>
-                        </footer>    
+                    <footer>
+                        <ItemCount stock={stock} onAdd={handleOnAdd} initial={cantidadAgregada}/>
+                        <Link to={"/cart"}><button className="css-button-neumorphic">Ir al carrito</button></Link>
+                        <Link to={"/"}><button className="css-button-neumorphic">Seguir Comprando</button></Link>
+                    </footer>    
                 }    
                   
                 <p className="textCant">Stock disponible: {stock} </p>
