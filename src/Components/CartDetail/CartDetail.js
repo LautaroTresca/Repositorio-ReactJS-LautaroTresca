@@ -1,9 +1,9 @@
-import "./CartList.css"
+import "./CartDetail.css"
 import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import tachoDeBasura from "./assets/eliminar.png"
 
-const CartList = () => {
+const CartDetail = () => {
     const {removeItem, cart, total, vaciarCarrito} = useContext(CartContext)
     return(
         <div>
@@ -17,11 +17,11 @@ const CartList = () => {
                     </tr>
                     {
                         cart.map(prod => 
-                            <tr key={prod.productId}>
+                            <tr key={prod.id}>
                                 <td className="fila">{prod.cantidad}</td>
                                 <td className="fila">{prod.name}</td>
                                 <td className="fila">${prod.price}</td>
-                                <td><button onClick={() => removeItem(prod.productId)}><img  alt="eliminar-producto" src={tachoDeBasura}/></button></td>
+                                <td><button onClick={() => removeItem(prod.id)}><img  alt="eliminar-producto" src={tachoDeBasura}/></button></td>
                             </tr> 
                             
                     )}
@@ -40,4 +40,4 @@ const CartList = () => {
     )
 }
 
-export default CartList
+export default CartDetail

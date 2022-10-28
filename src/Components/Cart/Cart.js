@@ -2,7 +2,7 @@ import "./Cart.css"
 import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import { Link } from "react-router-dom";
-import CartList from "../CartList/CartList";
+import CartDetail from "../CartDetail/CartDetail";
 
 const Cart = () => {
 
@@ -20,7 +20,7 @@ const Cart = () => {
         )
     }else{
         return(
-            <CartList/>
+            <CartDetail/>
         )
     }
 
