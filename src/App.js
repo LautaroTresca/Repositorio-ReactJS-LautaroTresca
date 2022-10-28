@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import Cart from './Components/Cart/Cart';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {CartProvider} from "./CartContext/CartContext"
+import Checkout from './Components/Checkout/Checkout';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>  
             <Route path='/category/:category' element={<ItemListContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
             <Route path='*' element={<img alt='img-404' src='https://dinahosting.com/blog/cont/uploads/2021/03/error-404.jpg'></img>}></Route>
           </Routes>
         </BrowserRouter>

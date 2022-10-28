@@ -25,7 +25,7 @@ export const CartProvider = ( {children} ) => {
                 text: `Se agrego ${productoAgregado.cantidad} ${productoAgregado.name} al carrito`,
                 className: "info",
                 position: "center",
-                duration: 1000,
+                duration: 1500,
               }).showToast();
         }else{
             const cartActualizado = cart.map(prod => {

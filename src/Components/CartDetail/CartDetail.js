@@ -2,6 +2,7 @@ import "./CartDetail.css"
 import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import tachoDeBasura from "./assets/eliminar.png"
+import { Link } from "react-router-dom"
 
 const CartDetail = () => {
     const {removeItem, cart, total, vaciarCarrito} = useContext(CartContext)
@@ -31,7 +32,7 @@ const CartDetail = () => {
                 <p>Total: ${total}</p>
             </section>
             <section className="containerBotonesCartList">
-                <button className="css-button-arrow--black">Finalizar Compra</button>
+                <Link to={"/checkout"}><button className="css-button-arrow--black">Continuar Compra</button></Link>
                 <button onClick={vaciarCarrito} className="css-button-arrow--black">Vaciar Carrito</button>
             </section>
 

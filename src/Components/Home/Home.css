@@ -27,6 +27,7 @@
 .h1ImgSectionHeader{
     font-family: 'Roboto Slab', serif;
     font-size: xx-large;
+    font-weight: normal;
     position: absolute;
     color: wheat;
 }
@@ -41,15 +42,6 @@
 .titleSectionMain{
     text-decoration: underline;
     text-transform: capitalize;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.377);
-}
-
-.containerCardsSectionMain{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 60px;
-    row-gap: 60px;
-    justify-content: space-evenly;
 }
 
 .cardSectionMain{
@@ -60,19 +52,4 @@
     width: 250px;
     height: 400px;
     background-color: #dfdfdf;
-}
-
-.cardSectionMain:hover{
-    transition: all ease 0.5s;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.144);
-}
-
-.imgCardSectionMain{
-    width: 100%;
-    object-fit: cover;
-}
-
-.linkCards{
-    text-decoration: none;
-    color: black;
 }
