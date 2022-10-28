@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from "react"
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
-import Swal from 'sweetalert2'
 
 export const CartContext = createContext()
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ( {children} ) => {
     const [cart, setCart] = useState([])
     const [cantidadTotal, setCantidadTotal] = useState(0)
     const [total, setTotal] = useState(0)
@@ -25,9 +24,8 @@ export const CartProvider = ({children}) => {
             Toastify({
                 text: `Se agrego ${productoAgregado.cantidad} ${productoAgregado.name} al carrito`,
                 className: "info",
-                style: {
-                  background: "linear-gradient(to right, #006e07, #009400, #058c00)",
-                }
+                position: "center",
+                duration: 1000,
               }).showToast();
         }else{
             const cartActualizado = cart.map(prod => {
@@ -75,6 +73,12 @@ export const CartProvider = ({children}) => {
 
     const vaciarCarrito = () =>{
         setCart([])
+        Toastify({
+            text: "Carrito vacio",
+            position: "center",
+            duration: 1000
+        }).showToast();
+            
     }
 
     const getCantidadProducto = (id) => {

@@ -3,7 +3,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 import Spinner from "../Spinner/Spinner"
 import { useParams } from "react-router-dom"
 import { getDoc, doc } from "firebase/firestore"
-import { baseDeDatos } from "../services/firebase"
+import { baseDeDatos } from "../../services/firebase"
 
 const ItemDetailContainer = () =>{ 
     const [product, setProduct] = useState({})

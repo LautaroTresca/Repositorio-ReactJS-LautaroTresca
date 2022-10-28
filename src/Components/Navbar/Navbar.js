@@ -4,7 +4,7 @@ import logo from "./assets/logo.png"
 import { Link } from "react-router-dom"
 import { getDocs, collection, query, orderBy } from "firebase/firestore"
 import { useEffect, useState } from "react"
-import { baseDeDatos } from "../services/firebase"
+import { baseDeDatos } from "../../services/firebase"
 
 const Navbar = () => {
     const [categorias, setCategorias] = useState([])
