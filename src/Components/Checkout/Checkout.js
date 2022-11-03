@@ -7,61 +7,92 @@ import Swal from 'sweetalert2'
 
 const Checkout = () => {
     const { cart, total } = useContext(CartContext)
-    const [ name, setName ] = useState("")
-    const [ tel, setTel ] = useState("")
-    const [ email, setEmail ] = useState("")
-   
-    const createOrder = () => {
-        const objOrder = {
-            buyer: {
-                name: name,
-                phone: tel,
-                email: email,
-            },
-            items: cart,
-            total
-        }
-
-    const ordersRef = collection(baseDeDatos, "orders")
-        addDoc(ordersRef, objOrder).then(response => {
-            return(
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: "¡Listo!",
-                    text:  `Muchas gracias por su compra.
-                            A la brevedad nos comunicaremos con usted.
-                            El id de su compra es: ${response.id}`,
-                    confirmButtonText: 'Ok',
-                    showConfirmButton: true,
-                  })
-            )
-        }).catch(() => {
-            return(
-                Swal.fire({
-                    position: 'center',
-                    icon: 'error',
-                    title: "Algo salio mal",
-                    text: `Hubo un error inesperado al finalizar la compra`,
-                    confirmButtonText: 'Ok',
-                    showConfirmButton: true,
-                  })
-            ) 
+    const [datos, setDatos] = useState({
+        nombre:"",
+        telefono:"",
+        email:"",
+        emailConfirmed:""
+    })
+    
+    const handleInputChange = (e) => {
+        setDatos({
+            ...datos, [e.target.name] : e.target.value
         })
-    } 
+    }
 
+    const createOrder = (e) => {
+        e.preventDefault()
+            const objOrder = {
+                buyer: {
+                    name: [datos.nombre],
+                    phone: [datos.telefono],
+                    email: [datos.email],
+                    emailConfirmed: [datos.emailConfirmed]
+                },
+                items: cart,
+                total
+            }
+        
+        const ordersRef = collection(baseDeDatos, "orders")
+        if((datos.email && datos.nombre && datos.telefono !== "") && (datos.email === datos.emailConfirmed)){
+            addDoc(ordersRef, objOrder).then(response => {
+                return(
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: "¡Listo!",
+                        text:  `Muchas gracias por su compra.
+                        A la brevedad nos comunicaremos con usted.
+                        El id de su compra es: ${response.id}`,
+                        confirmButtonText: 'Ok',
+                        showConfirmButton: true,
+                    })
+                    )
+                }).catch(() => {
+                return(
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: "Algo salio mal",
+                        text: `Hubo un error inesperado al finalizar la compra`,
+                        confirmButtonText: 'Ok',
+                        showConfirmButton: true,
+                    })
+                    ) 
+            })      
+        }else if(datos.email !== datos.emailConfirmed){
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: "Los correos electronicos no coinciden",
+                confirmButtonText: 'Ok',
+                showConfirmButton: true,
+            })
+        }else{
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: "Complete todos los campos",
+                confirmButtonText: 'Ok',
+                showConfirmButton: true,
+            })
+        }
+    }
+    
     return(
         <div className="divFormularioCheckout">
             <h2>Completa con tus datos para finalizar la compra</h2>
                 <form className="form">
                     <label >Nombre y apellido:</label>
-                    <input className="inputs" placeholder="Ingrese Nombre Completo" type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input className="inputs" minLength="5" placeholder="Ingrese Nombre Completo" type="text" name="nombre" onChange={handleInputChange} required/>
                     <label >Telefono:</label>
-                    <input className="inputs" placeholder="Ingrese Numero De Telefono" type="tel" value={tel} onChange={(e) => setTel(e.target.value)}/>
+                    <input className="inputs" minLength="5" placeholder="Ingrese Numero De Telefono" type="tel" name="telefono" onChange={handleInputChange} pattern="[0-9]+" required/>
                     <label >Correo electronico:</label>
-                    <input className="inputs" placeholder="Ingrese Direccion De Correo Electronico" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input className="inputs" minLength="5" placeholder="Ingrese Direccion De Correo Electronico"  type="email" name="email" onChange={handleInputChange} required/>
+                    <label >Vuelva a ingresar su correo electronico:</label>
+                    <input className="inputs" minLength="5" placeholder="Ingrese Nuevamente Su Direccion De Correo Electronico" type="email" name="emailConfirmed" onChange={handleInputChange} required/>
+                    <input className="botonFormulario" type="submit" value="Finalizar Compra" onClick={createOrder}/>
                 </form>
-                <button className="css-button-arrow--black" onClick={createOrder}>Finalizar Compra</button>
         </div>
     )
 }

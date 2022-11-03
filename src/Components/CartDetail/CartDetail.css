@@ -28,7 +28,8 @@
     overflow: hidden;
     border-radius: 5px;
     border: none;
-    background-color: #343a40
+    background-color: #343a40;
+    margin-top: 15px;
   }
   .css-button-arrow--black:hover {
     border-radius: 5px;
@@ -49,3 +50,7 @@
     right: -20px;
     transition: 0.4s;
   }
+
+.imgCarrito{
+  width: 100px;
+}

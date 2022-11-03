@@ -11,17 +11,19 @@
     background: #0000;
     border-radius: 10px;
     box-shadow: 0px 10px 30px #00000054;
+    align-items: center;
 }
 
 .inputs{
     height: 40px;
+    width: 100%;
     background: #00000024;
-    border: none;
+    border-color:#0000;
     border-radius: 5px;
 }
 
-.css-button-arrow--black {
-    min-width: 130px;
+.botonFormulario {
+    width: fit-content;
     height: 40px;
     color: #fff;
     padding: 5px 10px;
@@ -35,24 +37,11 @@
     border-radius: 5px;
     border: none;
     background-color: #1f72c6;
-    margin: 25px;
   }
-  .css-button-arrow--black:hover {
-    border-radius: 5px;
-    padding-right: 24px;
-    padding-left:8px;
+  .botonFormulario:hover {
+    background-color: dodgerblue;
   }
-  .css-button-arrow--black:hover:after {
-    opacity: 1;
-    right: 10px;
-  }
-  .css-button-arrow--black:after {
-    content: "\00BB";
-    position: absolute;
-    opacity: 0;
-    font-size: 20px;
-    line-height: 40px;
-    top: 0;
-    right: -20px;
-    transition: 0.4s;
-  }
+
+input:required:valid{
+    border: solid 3px #a6ec9c;
+}

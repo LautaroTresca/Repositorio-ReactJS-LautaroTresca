@@ -24,7 +24,7 @@ const ItemDetailContainer = () =>{
             <Spinner/>
         )
     }
-
+    
     return(
         <ItemDetail {...product}/>
     )

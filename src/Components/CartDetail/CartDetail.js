@@ -14,6 +14,7 @@ const CartDetail = () => {
                         <td><strong>Cantidad</strong></td>
                         <td><strong>Productos</strong></td>
                         <td><strong>Precio</strong></td>
+                        <td><strong>Imagen</strong></td>
                         <td><strong>Eliminar</strong></td>
                     </tr>
                     {
@@ -22,6 +23,7 @@ const CartDetail = () => {
                                 <td className="fila">{prod.cantidad}</td>
                                 <td className="fila">{prod.name}</td>
                                 <td className="fila">${prod.price}</td>
+                                <td className="fila"><img alt="imagen-producto" className="imgCarrito" src={prod.img}/></td>
                                 <td><button onClick={() => removeItem(prod.id)}><img  alt="eliminar-producto" src={tachoDeBasura}/></button></td>
                             </tr> 
                             

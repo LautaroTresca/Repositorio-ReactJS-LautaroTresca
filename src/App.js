@@ -22,7 +22,7 @@ function App() {
             <Route path='/category/:category' element={<ItemListContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/checkout' element={<Checkout/>}/>
-            <Route path='*' element={<img alt='img-404' src='https://dinahosting.com/blog/cont/uploads/2021/03/error-404.jpg'></img>}></Route>
+            <Route path='*' element={<img className='img404' alt='img-404' src='https://dinahosting.com/blog/cont/uploads/2021/03/error-404.jpg'></img>}></Route>
           </Routes>
         </BrowserRouter>
       </CartProvider>

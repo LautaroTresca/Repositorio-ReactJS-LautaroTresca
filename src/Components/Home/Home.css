@@ -2,7 +2,6 @@
 
 
 .sectionHeader{
-    margin-bottom: 10px;
     display: flex;
     width: 100%;
     height: 560px;
@@ -14,19 +13,19 @@
 .imgSectionHeader{
     height: inherit;
     width: 100%;
-    object-fit: cover;
+    object-fit: cover;  
 }
 
 .sectionHeader::before{
     position: absolute;
     content: "";
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.527);
+    background-color: rgba(0, 0, 0, 0.527);   
 }
 
 .h1ImgSectionHeader{
     font-family: 'Roboto Slab', serif;
-    font-size: xx-large;
+    font-size: xxx-large;
     font-weight: normal;
     position: absolute;
     color: wheat;
@@ -36,7 +35,6 @@
     margin: 5px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: rgb(238, 238, 238);
 }
 
 .titleSectionMain{
