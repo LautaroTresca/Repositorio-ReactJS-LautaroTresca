@@ -75,3 +75,22 @@
   color: black;
   font-weight: 700;
 }
+
+@media screen and (max-width: 480px) {
+  
+  .navbar{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .divBotones{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo{
+    width: 20%;
+    height: 80%;
+  }
+}

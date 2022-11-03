@@ -56,3 +56,9 @@
     right: -20px;
     transition: 0.4s;
   }
+
+  @media screen and (max-width: 480px) {
+    .carritoVacio{
+      margin-top: 320px;
+    }
+  }

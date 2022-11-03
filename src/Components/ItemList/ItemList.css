@@ -5,3 +5,9 @@
     flex-wrap: wrap;
     padding-top: 130px;
 }
+
+@media screen and (max-width: 480px) {
+   .divCards{
+    padding-top: 280px;
+   }
+}

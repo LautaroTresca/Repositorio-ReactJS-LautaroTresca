@@ -11,7 +11,8 @@ const ItemDetailContainer = () =>{
     const { productId } = useParams()
     
     useEffect(() => { 
-        const documentoDeLaBaseDeDatos = doc(baseDeDatos, "productos", productId)
+        const documentoDeLaBaseDeDatos = doc(baseDeDatos, "productos", productId) 
+
             getDoc(documentoDeLaBaseDeDatos).then (response => {
                 setProduct(response.data())
             }).finally(() =>{

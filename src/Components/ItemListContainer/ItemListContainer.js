@@ -8,13 +8,11 @@ import { baseDeDatos } from "../../services/firebase"
 const ItemListContainer = () =>{ 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-
     const {category} = useParams()
 
     useEffect(() => { 
-
         const collectionBaseDeDatos = category ? query(collection(baseDeDatos, "productos"), where("category", "==", category)) : collection(baseDeDatos, "productos") 
-
+        
         getDocs(collectionBaseDeDatos).then (response=> {
             const productosMapeados = response.docs.map(doc => {
                 const data = doc.data()
