@@ -54,3 +54,13 @@
 .imgCarrito{
   width: 100px;
 }
+
+@media screen and (max-width: 480px) {
+  .precioTotal{
+    justify-content: center;
+  }
+
+  .containerBotonesCartList{
+    align-items: center;
+  }
+}

@@ -45,3 +45,14 @@
 input:required:valid{
     border: solid 3px #a6ec9c;
 }
+
+@media screen and (max-width: 480px) {
+    .divFormularioCheckout{
+        padding-top: 290px;
+    }
+    
+    .form{
+        margin: 0px 30px 0px 30px;
+        padding: 40px;
+    }
+}
