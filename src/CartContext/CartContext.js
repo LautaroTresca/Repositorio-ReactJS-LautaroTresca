@@ -74,7 +74,7 @@ export const CartProvider = ( {children} ) => {
     const vaciarCarrito = () =>{
         setCart([])
         Toastify({
-            text: "Carrito vacio",
+            text: "Se vacio carrito",
             position: "center",
             duration: 1000
         }).showToast();

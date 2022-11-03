@@ -6,7 +6,7 @@ import { baseDeDatos } from "../../services/firebase"
 import Swal from 'sweetalert2'
 
 const Checkout = () => {
-    const { cart, total } = useContext(CartContext)
+    const { cart, total, vaciarCarrito } = useContext(CartContext)
     const [datos, setDatos] = useState({
         nombre:"",
         telefono:"",
@@ -38,15 +38,26 @@ const Checkout = () => {
             addDoc(ordersRef, objOrder).then(response => {
                 return(
                     Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: "¡Listo!",
-                        text:  `Muchas gracias por su compra.
-                        A la brevedad nos comunicaremos con usted.
-                        El id de su compra es: ${response.id}`,
-                        confirmButtonText: 'Ok',
-                        showConfirmButton: true,
-                    })
+                        title: '¿Esta seguro de que quiere finalizar la compra?',
+                        showDenyButton: true,
+                        confirmButtonText: 'Finalizar',
+                        denyButtonText: `Cancelar`,
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            vaciarCarrito()
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: "¡Listo!",
+                                text:  `Muchas gracias por su compra.
+                                A la brevedad nos comunicaremos con usted.
+                                El id de su compra es: ${response.id}`,
+                                confirmButtonText: 'Ok',
+                                showConfirmButton: true,
+                            })   
+                        }
+                      })
+                    
                     )
                 }).catch(() => {
                 return(
@@ -57,6 +68,7 @@ const Checkout = () => {
                         text: `Hubo un error inesperado al finalizar la compra`,
                         confirmButtonText: 'Ok',
                         showConfirmButton: true,
+                        showCloseButton: true,
                     })
                     ) 
             })      
@@ -67,6 +79,7 @@ const Checkout = () => {
                 title: "Los correos electronicos no coinciden",
                 confirmButtonText: 'Ok',
                 showConfirmButton: true,
+                showCloseButton: true,
             })
         }else{
             Swal.fire({
@@ -75,6 +88,7 @@ const Checkout = () => {
                 title: "Complete todos los campos",
                 confirmButtonText: 'Ok',
                 showConfirmButton: true,
+                showCloseButton: true,
             })
         }
     }
