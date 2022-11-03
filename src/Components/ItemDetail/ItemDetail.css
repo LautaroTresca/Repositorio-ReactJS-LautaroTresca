@@ -19,3 +19,18 @@
 .textCant{
     color: #6e6e6e77;
 }
+
+@media screen and (max-width: 480px) {
+    .divItemDetail{
+        flex-direction: column;
+        padding-top: 250px;
+    }
+
+    .imgDetail{
+        width: 320px;
+    }
+
+    .divDescripcionProducto{
+        padding: 40px;
+    }
+}

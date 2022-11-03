@@ -24,7 +24,7 @@ const ItemDetail = ({name, img, price, description1, description2, description3,
                 <h1>{name}</h1>
                 <img className="imgDetail" src={img} alt={name}/>
             </div>
-            <div>
+            <div className="divDescripcionProducto">
                 <h2>${price}</h2>
 
                 <li className="textDescription">{description1}</li>
