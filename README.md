@@ -14,14 +14,14 @@ Este proyecto esta hecho sobre la libreria ReactJS.
 
 **Herramientas**
 
-*React JS - Libreria utilizada para el desarrollo del sitio web
-*Toastify JS - Usado para manejar los toast
-*SweetAlert - Usado para manejar las alertas
+* React JS - Libreria utilizada para el desarrollo del sitio web
+* Toastify JS - Usado para manejar los toast
+* SweetAlert - Usado para manejar las alertas
 
 ## Autor
 * **Lautaro Tresca**
 
 ## Test
-[Deploy](http://repositorio-react-js-lautaro-tresca.vercel.app/)
+* [Deploy](http://repositorio-react-js-lautaro-tresca.vercel.app/)
 
 
