@@ -28,7 +28,7 @@ export const CartProvider = ( {children} ) => {
                 duration: 1500,
               }).showToast();
         }else{
-            const cartActualizado = cart.map(prod => {
+            const cartUpdated = cart.map(prod => {
                 if(prod.id === productoAgregado.id){
                     const productoActualizado = {
                         ...prod, 
@@ -39,7 +39,7 @@ export const CartProvider = ( {children} ) => {
                     return prod
                 }
             })
-            setCart(cartActualizado)
+            setCart(cartUpdated)
         }
     }
 

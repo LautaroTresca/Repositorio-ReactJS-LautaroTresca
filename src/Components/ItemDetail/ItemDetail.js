@@ -33,8 +33,15 @@ const ItemDetail = ({name, img, price, description1, description2, description3,
                 <li className="textDescription">{description4}</li>
 
                 { !isInCart(productId)
-                    ? 
-                    <ItemCount stock={stock} onAdd={handleOnAdd} initial={cantidadAgregada}/>
+                    ?
+                    <footer>
+                        <ItemCount stock={stock} onAdd={handleOnAdd} initial={cantidadAgregada}/>
+                        {
+                            stock !== 0 ? <p className="textCant">Stock disponible: {stock} </p>
+                            :
+                            <p className="textCant"> No hay stock</p>
+                        }
+                    </footer> 
                     :
                     <footer>
                         <ItemCount stock={stock} onAdd={handleOnAdd} initial={cantidadAgregada}/>
@@ -43,7 +50,6 @@ const ItemDetail = ({name, img, price, description1, description2, description3,
                     </footer>    
                 }    
                   
-                <p className="textCant">Stock disponible: {stock} </p>
             </div>
         </div>
     )
