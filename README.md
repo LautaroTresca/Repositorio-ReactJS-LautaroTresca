@@ -1,6 +1,6 @@
 # Proyecto E-commerce Lautaro Tresca
 
-El proyecto esta hecho sobre ReactJS.
+Este proyecto esta hecho sobre la libreria ReactJS.
 
 ## Pasos para ejecutar el proyecto de forma local
 *Estos pasos te permiten clonar el proyecto y ejecutarlo de forma local para poder probar y contribuir con algun desarrollo.
